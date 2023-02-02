@@ -8,7 +8,7 @@
   :error.sync="error"
   error-text="请求失败，点击重新加载"
   @load="onLoad"
->
+  >
   <van-cell v-for="article,index in list" :key="index" :title="article.title" />
 </van-list>
 </van-pull-refresh>
@@ -88,7 +88,7 @@ export default {
         const { results } = data.data
         this.list.unshift(...results)
         this.isLoading = false
-        // this.refreshSucces=`刷新成功，更新了${results.length}条数据`
+        this.refreshSucces = `刷新成功，更新了${results.length}条数据`
       } catch (err) {
         console.log('请求失败')
       }
